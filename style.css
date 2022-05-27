@@ -1,0 +1,30 @@
+h4{
+				text-align: center;
+			}
+			.databox {
+				background-color: skyblue;
+			}
+			
+			.databox h3, h5{
+				color: #fff;
+			}
+			
+			.databox label{
+				position: absolute;
+			}
+			
+			.databox input{
+				margin-left: 90px;
+				margin-bottom: 5px;
+			}
+			.databox button{
+				margin-left: 3px;
+			}
+			
+			#resultbox{
+				background-color: #99ff99;
+			}
+			
+			#resultbox h5 {
+				color: #000;
+			}

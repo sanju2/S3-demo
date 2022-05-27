@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculate BMI</title>
+		<!-- CSS Styles Added Here -->
+		<link rel="stylesheet" href="style.css">
+		<!-- CSS Styles End Here -->
+		
+		<!-- JavaScript Script Start Here -->
+		<script language="javascript" type="text/javascript">
+			function calculateBMI(){
+				
+				var we = parseInt(document.getElementById("gwei").value,10);
+				var he = parseInt(document.getElementById("ghei").value,10);
+				
+				he = (he/100); //convert cm to m
+				var bmiout; 
+				bmiout =(we/(he*he)).toFixed(2);
+				document.getElementById("bmiprint").innerHTML = bmiout;
+				displayStatus(bmiout);
+			}
+		
+			function displayStatus(y){
+				var x = y;
+				if (x < 15){
+					document.getElementById("stprint").innerHTML = "Very severely underweight";
+					document.getElementById("resultbox").style.background='#ffffb3';
+				}
+				else if (x >= 15 &&  16 > x){
+					document.getElementById("stprint").innerHTML = "Severely underweigh";
+					document.getElementById("resultbox").style.background='#ffff80';
+				}
+				else if (x >= 16 && 18.5 > x){
+					document.getElementById("stprint").innerHTML = "Underweight";
+					document.getElementById("resultbox").style.background='#ffff66';
+					
+				}
+				else if (x >= 18.5 && 25 > x){
+					document.getElementById("stprint").innerHTML = "Normal (healthy weight)";
+					document.getElementById("resultbox").style.background='#ace600';
+				}
+				else if (x >= 25 && 30 > x){
+					document.getElementById("stprint").innerHTML = "Overweight";
+					document.getElementById("resultbox").style.background='#ffbb99';
+				}
+				else if (x >= 30 && 35 > x){
+					document.getElementById("stprint").innerHTML = "Moderately obese";
+					document.getElementById("resultbox").style.background='#ff7733';
+					
+				}
+				else if (x >= 35 && 40 > x){
+					document.getElementById("stprint").innerHTML = "Severely obese";
+					document.getElementById("resultbox").style.background='#ff5500';
+				}
+				else if (x >= 40 ){
+					document.getElementById("stprint").innerHTML = "Very severely obese";
+					document.getElementById("resultbox").style.background='#ff3333';
+				}
+				else{
+					document.getElementById("stprint").innerHTML = "Values Invalid";
+					document.getElementById("resultbox").style.background='#00e6ac';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="databox">
+			<center>
+				</br>
+				<h3> Calculate Your Body Mass Index </h3>
+				<h5> Enter Your Details </h5>
+					<form>
+					<label> Weight (kg) : </label> <input type="text" id="gwei" name="weightkg"><br>
+					<label> Height (cm) : </label> <input type="text" id="ghei" name="heightcm"><br>
+					<input type="button" onclick="calculateBMI()" value="Calculate BMI"><button type="reset">Reset</button><br>
+					</form>
+				<br>
+			</center>
+		</div>
+		
+		<div id="resultbox">
+			<center>
+				</br>
+				<h4 id="bmiprint"> Enter values to see your BMI </h4>
+				<h5 id="stprint"> Your Status </h5>
+				</br>
+			</center>
+		</div>
+	</body>
+</html>
